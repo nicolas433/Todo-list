@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
+
+      html {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+      body {
+        height: 400px;
+        width: 300px;
+        border-radius: 3px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .input-block {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 15px;
+        border-bottom: 1px solid grey;
+      }
+      .input-block #entrada {
+        border-radius: 3px;
+        border: 1px solid;
+        width: 50%;
+      }
+      .input-block #addBtn {
+        border-radius: 3px;
+        border: 1px solid;
+        width: 40%;
+      }
+
+      .list-block {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid grey;
+      }
+      h1 {
+        font-size: 30px;
+        font-family: Roboto, sans-serif;
+      }
+      ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      li{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+      }
+      .list-block input{
+        margin-right: 15px;
+        height: 15px;
+        width: 15px;
+      }
+      .list-block button{
+        margin-right: 15px;
+        height: 15px;
+        width: 15px;
+        text-align: center;
+        padding: 0;
+      }
