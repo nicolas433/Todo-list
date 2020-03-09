@@ -1,49 +1,41 @@
-let entrada = document.getElementById("entrada");
+let todoInput = document.getElementById("todoInput");
 let addBtn = document.getElementById("addBtn");
 let todoList = document.getElementById("todoList");
 let doneList = document.getElementById("doneList");
 
-function delet(element) {
+function deletE(element) {
   doneList.removeChild(element);
 }
 
-function done(done) {
-  done.removeChild(done.firstElementChild);
-
-  let inverter = done.innerHTML;
-  inverter = document.createTextNode(inverter);
-
-  done.innerHTML = "";
-
+function donE(todoElement, text) {
+  todoList.removeChild(todoElement);
+  let doneElement = document.createElement("li");
   let removeBtn = document.createElement("button");
-  let text = document.createTextNode("X");
-  removeBtn.appendChild(text);
-  removeBtn.addEventListener("click", () => delet(done));
+  let X = document.createTextNode("X");
 
-  done.appendChild(removeBtn);
-  done.appendChild(inverter);
-
-  doneList.appendChild(done);
+  removeBtn.appendChild(X);
+  removeBtn.addEventListener("click", () => deletE(doneElement));
+  doneElement.appendChild(removeBtn);
+  doneElement.appendChild(text);
+  doneList.appendChild(doneElement);
 }
 
-function add() {
-  if (entrada.value != "") {
-    let todo = document.createElement("li");
-    todo.style.listStyle = "none";
+function adD() {
+  if (todoInput.value != "") {
+    let todoElement = document.createElement("li");
+    let todoText = document.createTextNode(todoInput.value);
+    let doneBtn = document.createElement("input");
 
-    let confirm = document.createElement("input");
-    confirm.type = "checkbox";
-    confirm.addEventListener("click", () => done(todo));
+    todoElement.style.listStyle = "none";
+    doneBtn.type = "checkbox";
+    todoInput.value = "";
 
-    let text = document.createTextNode(entrada.value);
+    doneBtn.addEventListener("click", () => donE(todoElement, todoText));
 
-    todo.appendChild(confirm);
-    todo.appendChild(text);
-
-    todoList.appendChild(todo);
-
-    entrada.value = "";
+    todoElement.appendChild(doneBtn);
+    todoElement.appendChild(todoText);
+    todoList.appendChild(todoElement);
   }
 }
 
-addBtn.addEventListener("click", add);
+addBtn.addEventListener("click", adD);
